@@ -5,7 +5,7 @@ $(document).ready(function(){
   var windscroll = $(window).scrollTop();
       if (windscroll >= 500) {
           $('.main section').each(function(i) {
-          if ($(this).position().top -90 <= windscroll) {
+          if ($(this).position().top <= windscroll) {
               $('.main section.active').removeClass('active');
               $('.main section').eq(i).addClass('active');
               $('.custom li.active').removeClass('active');
