@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>jQuery One Page Scroll</title>
+	<meta charset="utf-8">
+	<title>Pagination scroll</title>
   <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
   <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
   <div class="wrapper">
-    <div class="main">
-      
+	  <div class="main">
+	    
       <section>
         <h1>What is Lorem Ipsum?</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -27,15 +27,36 @@
   <script type="text/javascript" src="js/custom.js"></script>
     <script>
     $(document).ready(function(){
-      var windowFoldHeight = $(window).height() ;
-      $('section').css("height",windowFoldHeight+"px");
+        var j = 1;
+        var windowFoldHeight = $(window).height() ;
+        $('section').css("height",windowFoldHeight+"px");
 
-      // scroll function
-      $(".main").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: 600
+        // adding data index to each div
+        $("section").each(function(){
+          $(this).attr("data-index", j);
+          ++j;
+        })
+
+        // creating basic structure for pagination
+        $("body").append( "<ul class=\"custom\"></ul>" );
+        for (var i = 0; i < $('section').length; i++) {
+          $("ul.custom").append("<li><a data-index='"+(i+1)+"' href='#" + (i+1) + "'></a></li>");
+        };
+        $("ul.custom li:nth-child(1)").addClass("active");
+        
+
+        // onclick event to scroll at particular div
+        $("ul li a").click(function(){
+              $(this).parent("li").siblings("li").removeClass("active")
+              var dataIndex = $(this).attr('data-index');
+              $(this).parent("li").addClass("active");
+               var $index = $('section[data-index="' + dataIndex + '"]');
+          $('body').animate({
+            scrollTop: $index.offset().top
+          })
+        });
+
       });
-    });
     
   </script>
 </body>

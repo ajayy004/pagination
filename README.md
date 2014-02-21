@@ -1,2 +1,2 @@
-pagination
+pageScroll
 ==========
