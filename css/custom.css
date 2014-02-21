@@ -1,0 +1,54 @@
+/*tags reset*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+  section {
+    display: block;
+    width: 100%;
+    background: #CCC;
+  }
+  section p {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  h1 {
+    font-size: 60px;
+    line-height: 62px;
+    padding: 20% 0 0 0;
+    text-align: center;
+  }
+  ul {
+    position: fixed;
+    left: 10px;
+    top: 30%;
+  }
+  ul li {
+    list-style: none;
+  }
+  ul a[title]:hover:after {
+    content: attr(title);
+    color: #000;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "helvetica","sans-serif";
+    position: absolute;
+    left: 30px;
+    top: 0px;
+    white-space: nowrap;
+  }
+  ul li a {
+    display: block;
+    content: "";
+    border: 2px solid #000;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 0 10px 0;
+    position: relative;
+  }
+  ul li a.active {
+    border-color: #3161db;
+  }
