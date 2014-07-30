@@ -3,7 +3,7 @@
 It’s just a simple pagination for the page which can be used to scroll at particular div/section.
 And as the page is scrolled the pagination get updated.
 
-## Browser Support
+#### Browser Support
 
 - Chrome 
 - Firefox
@@ -11,6 +11,6 @@ And as the page is scrolled the pagination get updated.
 - Safari
 - IE 
 
-## License
+#### License
 Copyright (c) 2014 Ajay Kumar Yadav
 Licensed under the [MIT license](http://opensource.org/licenses/MIT).
